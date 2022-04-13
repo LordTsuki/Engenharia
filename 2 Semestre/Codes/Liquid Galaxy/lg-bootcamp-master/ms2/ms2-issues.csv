@@ -1,0 +1,118 @@
+Title,Description
+[MS2] Task 1: SSH Basic connection and known hosts,"Objectives
+The objective of this task is to establish a connection between machines A and B using SSH protocol and perform some 
+operations like:
+- Ping one machine to another one.
+- Use tcpdump to capture packages that are coming from the computer
+- Check location of known hosts
+- Check the history of machines A and B terminals and save the outputs in txt files
+
+Instructions
+- Install the information listed on the prerequisites
+- From machine A make ssh connection to machine B
+- On machine B, ping to machine A
+- On machine A, use tcpdump to capture any packages that are coming from the ssh connection port
+- Capture ping packages
+- Check both machines A and B and look for the location of the known hosts
+- On machine A, use the command history to get all the commands used in terminal for this task
+- Save the output to a file called machine-a-history.txt
+- Repeat the process for machine B, but changing the file name to machine-b-history.txt
+
+Prerequisites:
+- openssh-server (installed on the destination)
+- tcpdump (installed on the origin)
+- any ssh client (installed on the origin )
+
+Execution:
+For this activity no bash script is needed
+"
+[MS2] Task 2: SSH and SCP,"Objectives
+The objective of this task is to create a script that establishes a connection between a machine A and B and perform 
+some operations that:
+
+- establishes a connection with another computer in the same
+network using the SSH protocol. We'll be referring client as computer A and server as computer B
+- Ping machine B from machine A
+- Use tcpdump to capture packages that are coming from the computer
+- Save all the packages transmitted in the first 10 seconds to a file
+- Send the created file to machine A
+
+Instructions
+- Install the information listed on the prerequisites
+- Define the parameters listed on the parameters list
+- Use the information gathered on the params to start an ssh connection between machine A and B
+- Write an instruction that ping machine B from machine A
+- Use tcpdump to capture the ping packages that are coming from the ssh connection port for the first 10 seconds and then save the output in a file called ssh-ping-packages.pcap
+
+```
+sudo tcpdump -G TIME_SECONDS -W COUNT -i INTERFACE -w FILE_NAME.pcap
+```
+- Send the ssh-ping-packages.pcap to machine A using scp
+- Optionally you can see the file output with the following command
+```
+sudo tcpdump -qns 0 -X -r FILE_NAME.pcap
+```
+
+
+Prerequisites:
+- openssh-server (installed on the destination)
+- tcpdump (installed on the origin)
+- any ssh client (installed on the origin )
+
+Parameters
+$1 HOSTNAME
+$2 IPADDRESS
+$3 PASSWORD
+
+Execution: the script will be running on machine A
+"
+[MS2] Task 3: Curl,"Objectives
+The objective of this task is to learn how to use the command CURL to:
+
+- Check if a domain is up
+- Make a http request
+- Download files
+
+To do that, you have to create a script that allows users to select a domain and a different action to be performed. 
+The script needs to:
+
+- Have a menu where the user can choose between the options:
+- (1) Make GET request and receive a JSON
+- (2) Download a file from a remote server
+- Ask for the remote server domain
+- Check if domain is up
+- If domain is up, perform the action
+
+Instructions
+
+- Install the required information listed on the prerequisites list
+- Define the parameters listed on the parameters list
+- Create a menu where the user can choose between the options:
+    (1) Make GET request and receive a JSON
+    (2) Download a file from a remote server
+- Ask user to input the domain
+- Use curl to check if the domain is up
+- If it is down, alert user and abort the script
+- If it is up, do operation (1) or (2) based on the input given by the user as parameter
+- If operation is (1), save the content of the JSON into a file called get-json-response.json
+- If operation is (2), check if file is a .zip. 
+- If it is a .zip, unzip it.
+- At the end warn the user where the files will be located
+
+Prerequisites
+
+- Curl
+
+Execution
+
+bash task3 OPTION DOMAIN
+$1 OPTION
+$2 DOMAIN
+
+Resources
+
+Example remote servers:
+
+* For GET request: [JSON Placeholder](https://jsonplaceholder.typicode.com/)
+* For file transfer: [Liquid Galaxy](https://github.com/LiquidGalaxyLAB/liquid-galaxy)
+"

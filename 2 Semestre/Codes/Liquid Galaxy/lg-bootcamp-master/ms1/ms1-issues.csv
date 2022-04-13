@@ -1,0 +1,58 @@
+Title,Description
+[MS1] Task 1: Shutdown,"Make a script to shutdown the machine, but before the action, the user must be asked for confirmation and only perform it if the user input is yes. Feel free to change messages and outputs.
+```
+bash shutdown.sh
+
+Are you sure that you want to shutdown the computer? y
+Shutting down...
+```
+In this task we will make the first bash script and also use the if condition."
+[MS1] Task 2: Reboot,"Make a script to perform a reboot command on the machine, before the action a count down of 5 seconds should be prompted. Feel free to change messages and outputs.
+```
+bash restart.sh
+
+The computer will reboot...
+5
+4
+3
+2
+1
+Rebooting...
+```
+In this task we will see the for concept and timeouts in bash."
+[MS1] Task 3: Turn screen,"Make a script to turn the screen to left or right, the direction must be passed by arguments. Feel free to change messages and outputs. Input example:
+``` bash
+bash turn-screen.sh left
+```
+In this task we will see arguments in bash."
+[MS1] Task 4: Change keyboard language,"Make a script to change the keyboard language of the keyboard, the language must be passed via argument.
+Usage example:
+``` bash
+bash keyboard-language us
+```
+In this task we discuss more about arguments."
+[MS1] Task 5: Menu ,"Now it's time to make a interface to let the user choose between all previous commands, all possible operations should be prompt and the script must wait for user operations input. Also operations with more than one possible usage (like turn screen and change keyboard language) should ask for the specific operation. Feel free to change messages and outputs. Flow example:
+
+Prompt all possible operations and wait for user input:
+```
+(1) Relaunch
+(2) Restart
+...
+(4) Change keyboard language
+
+Enter the operation:
+```
+After user choose a operation, if it has arguments ask for that and wait for user input, if not, just execute the operation. In this example the user choose the change keyboard language operation, then was asked the specific desired keyboard code.
+```
+(1) Relaunch
+(2) Restart
+...
+(4) Change keyboard language
+
+Enter the operation: 4
+
+What is the language code that you want? us
+
+The keyboard language changed to us.
+```
+In this task we will see interfaces and menus on bash."
